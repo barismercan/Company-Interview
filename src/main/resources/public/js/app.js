@@ -68,9 +68,10 @@ var adminDepartmentsAddController = function($scope, departmentsService, $state)
     $scope.fieldList = [];
     $scope.save = function(){
         $scope.department.employeeList = [];
-        $scope.employee = {};
+
         for(var i = 0 ;i < $scope.fieldList.length;i++){
-        	$scope.employee.name = $scope.fieldList[i].name;
+          $scope.employee = {};  
+          $scope.employee.name = $scope.fieldList[i].name;
         	$scope.employee.surname = $scope.fieldList[i].surname;
         	$scope.employee.salary = $scope.fieldList[i].salary;
         	$scope.department.employeeList.push($scope.employee);
@@ -79,17 +80,17 @@ var adminDepartmentsAddController = function($scope, departmentsService, $state)
             $state.go("admin.departments", {}, {reload: true});
         });
     };
-    
+
     $scope.addNewChoice = function() {
       var newItemNo = $scope.fieldList.length+1;
       $scope.fieldList.push({'id':'choice'+newItemNo});
     };
-      
+
     $scope.removeChoice = function() {
       var lastItem = $scope.fieldList.length-1;
       $scope.fieldList.splice(lastItem);
     };
-    
+
 };
 adminDepartmentsAddController.$inject = ["$scope", "departmentsService", "$state"];
 
