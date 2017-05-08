@@ -1,0 +1,32 @@
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h1 class="panel-title">
+        </h1>
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+            <label>Filtre</label>
+            <input type="text" class="form-control" ng-model="filterText" />
+            <table class="table">
+				<thead>
+				<tr>
+					<th>Departman Adi</th>
+					<th>Departman Aciklamasi</th>
+					<th>Çalisan Adi</th>
+					<th>Çalisan Soyadi</th>
+					<th>Çalisan Maasi</th>
+				</tr>
+				</thead>
+				<tbody ng-repeat="department in departments | filter: filterText">
+				<tr ng-repeat="child in department.employeeList">
+					<td ng-if="$index==0" rowspan="{{department.employeeList.length}}">{{department.departmentName}}</td>
+					<td ng-if="$index==0" rowspan="{{department.employeeList.length}}">{{department.departmentDescription}}</td>
+					<td>{{child.name}}</td>
+					<td>{{child.surname}}</td>
+					<td>{{child.salary}}</td>
+				</tr>
+				</tbody>	
+			</table>
+        </div>
+    </div>
+</div>

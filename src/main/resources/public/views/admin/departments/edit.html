@@ -1,0 +1,40 @@
+<h4>Departmanlari Duzenle</h4>
+
+<form ng-submit="update()">
+
+    <div class="form-group">
+        <label>Departman Adi</label>
+        <input type="text" class="form-control" ng-model="department.departmentName" />
+    </div>
+
+    <div class="form-group">
+        <label>Departman Aciklamasi</label>
+        <input type="text" class="form-control" ng-model="department.departmentDescription"/>
+    </div>
+
+	<div class="form-group">
+	<fieldset data-ng-repeat="employee in department.employeeList">
+	<div class="form-group">
+    	<label>Personel Adi</label>
+    	<input type="text" class="form-control" ng-model="employee.name" required="required" >
+    </div>
+
+    <div class="form-group">
+    	<label>Personel Soyadi</label>
+    	<input type="text" class="form-control" ng-model="employee.surname" required="required" >
+    </div>
+	
+	<div class="form-group">
+    	<label>Personel Maasi</label>
+    	
+    	<input type="text" class="form-control" ng-model="employee.salary" required="required" >
+    </div>
+    </fieldset>
+	</div>
+
+    <button type="submit" class="btn btn-success">
+        Guncelle
+    </button>
+
+
+</form>

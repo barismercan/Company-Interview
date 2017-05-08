@@ -1,0 +1,39 @@
+<h4>Departman Ekle</h4>
+
+<form ng-submit="save()">
+
+    <div class="form-group">
+        <label>Departman Adi</label>
+        <input type="text" class="form-control" ng-model="department.departmentName" required="required" />
+    </div>
+
+    <div class="form-group">
+        <label>Departman Aciklamasi</label>
+        <input type="text" class="form-control" ng-model="department.departmentDescription" required="required" />
+    </div>
+
+	<fieldset data-ng-repeat="field in fieldList">
+    <button class="remove" ng-show="$last" ng-click="removeChoice()">-</button>
+    <div class="form-group">
+    	<label>Personel Adi</label>
+    	<input type="text" class="form-control" ng-model="field.name" required="required" >
+    </div>
+
+    <div class="form-group">
+    	<label>Personel Soyadi</label>
+    	<input type="text" class="form-control" ng-model="field.surname" required="required" >
+    </div>
+	
+	<div class="form-group">
+    	<label>Personel Maasi</label>
+    	
+    	<input type="text" class="form-control" ng-model="field.salary" required="required" >
+    </div>
+	</fieldset>
+	 <button class="addfields" ng-click="addNewChoice()">Personel Ekle</button>
+    <button type="submit" class="btn btn-success">
+        Kaydet
+    </button>
+
+
+</form>
